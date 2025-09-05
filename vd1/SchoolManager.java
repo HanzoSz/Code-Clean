@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class SchoolManager {
 
@@ -460,8 +461,8 @@ public class SchoolManager {
             } else {
                 System.out.println("-> Cac mon da dang ky:");
                 for (Enrollment enrollment : studentEnrollments) {
-                    Course course = findCourseById(enrollment.getCourseId());
-                    Grade grade = findGrade(student.getId(), enrollment.getCourseId());
+                    Course course = courseService.findCourseById(enrollment.getCourseId());
+                    Grade grade = gradeService.findGrade(student.getId(), enrollment.getCourseId());
                     
                     String courseName = (course != null) ? course.getName() : "Khong tim thay mon hoc";
                     String score = (grade != null) ? String.format("%.2f", grade.getScore()) : "Chua co diem";
