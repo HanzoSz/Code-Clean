@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-// Định nghĩa class Student
+// Định nghĩa class Student cc
 public class Student
 {
     public string Id { get; set; }
